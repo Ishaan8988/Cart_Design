@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="Shopping">
+            <div class="b1">
+                <div class="header">
+                    <h2>
+                        < Shopping continue</h2>
+                </div>
+                <div class="shopping-cart">
+                    <h3>Shopping cart</h3>
+                    <p>You have <span id="quantity">3</span> items in your cart</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="item">
+                    <img class="picture" src="https://rukminim1.flixcart.com/image/832/832/xif0q/sweatshirt/w/d/j/s-hood1-do-four-lines-n-fashion-and-youth-original-imaghk5gxfcjfzyp.jpeg?q=70" alt="">
+                    <p class="count">1</p>
+                    <div class="up-down">
+                        <img class="up-arrow" src="icons/up-icon.png" alt="+">
+                        <img class="down-arrow" src="icons/down-icon.png" alt="-">
+                    </div>
+                    <p class="item-amount">$500</p>
+                    <img class="delete" src="icons/delete-icon.png" alt="Trash">
+                </div>
+                <div class="item">
+                    <img class="picture" src="https://rukminim1.flixcart.com/image/832/832/kzn17680/shirt/v/f/e/xxl-logo-shirt-infinity-choice-original-imagbhwfv327sprp.jpeg?q=70" alt="">
+                    <p class="count">1</p>
+                    <div class="up-down">
+                        <img class="up-arrow" src="icons/up-icon.png" alt="+">
+                        <img class="down-arrow" src="icons/down-icon.png" alt="-">
+                    </div>
+                    <p class="item-amount">$500</p>
+                    <img class="delete" src="icons/delete-icon.png" alt="Trash">
+                </div>
+                <div class="item">
+                    <img class="picture" src="https://rukminim1.flixcart.com/image/832/832/kxjav0w0/shirt/j/v/v/l-self-design-d-cut-blue-pearl-ocean-original-imafgmn52makp52g.jpeg?q=70" alt="">
+                    <p class="count">1</p>
+                    <div class="up-down">
+                        <img class="up-arrow" src="icons/up-icon.png" alt="+">
+                        <img class="down-arrow" src="icons/down-icon.png" alt="-">
+                    </div>
+                    <p class="item-amount">$500</p>
+                    <img class="delete" src="icons/delete-icon.png" alt="Trash">
+                </div>
+            </div>
+            <div class="delivery-date">
+                <p>Expected delivery date</p>
+                <p>25.02.2023 to 30.02.2023</p>
+            </div>
+        </div>
+        <div class="address-details">
+            <header class="ad-header">
+                <h2 id="title" class="text-center">Address</h2>
+            </header>
+            <div class="form">
+                <div class="inputs"></div>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
+                <input type="number" name="number" id="number" class="form-control" placeholder="Phone number" required>
+                <input type="text" name="house-name" id="house-name" class="form-control"
+                    placeholder="House number, Building Name" required>
+                <input type="text" name="road-name" id="road-name" class="form-control"
+                    placeholder="Road name, area, colony" required>
+                <div class="sub-input">
+                    <input type="number" name="pinCode" id="pinCode" class="sub-form-control " placeholder="Pin Code"
+                        required>
+                    <input type="text" name="city" id="city" class="sub-form-control " placeholder="City" required>
+                </div>
+                <input type="text" name="state" id="state" class="sub-form-control " placeholder="State" required>
+                <div class="bill-total">
+                    <div class="total">
+                        <div class="subtotal">
+                            <p>Subtotal</p>
+                            <p>Shipping</p>
+                            <p>Total ( tax incl.)</p>
+                        </div>
+                        <div class="amount">
+                            <p>$1500</p>
+                            <p>$10</p>
+                            <p>$1510</p>
+                        </div>
+                    </div>
+                    <div class="checkout-btn">
+                        <button id="btn">
+                            <p>$1510</p>
+                            <p>checkout ></p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const myDivs = document.querySelectorAll(".item");
+        myDivs.forEach((div) => {
+            const pTag = div.querySelector("p");
+            const incrementBtn = div.querySelector(".up-arrow");
+            const decrementBtn = div.querySelector(".down-arrow");
+
+            incrementBtn.addEventListener("click", () => {
+                const currentNumber = parseInt(pTag.textContent);
+                pTag.textContent = currentNumber + 1;
+            });
+            decrementBtn.addEventListener("click", () => {
+                const currentNumber = parseInt(pTag.textContent);
+                if (currentNumber > 1) {
+                    pTag.textContent = currentNumber - 1;
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
